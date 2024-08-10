@@ -20,10 +20,10 @@ module.exports = function check(str, bracketsConfig) {
       }
 
       if (str[i] === bracketsConfig[j][1]) {
-        if (testArr[testArr.length - 1] !== bracketsConfig[j][0]) {
-          return false;
+        if (testArr[testArr.length - 1] === bracketsConfig[j][0]) {
+          testArr.pop();
         } else {
-            testArr.pop();
+          return false; 
         }
         break;
       }
